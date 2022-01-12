@@ -4,16 +4,17 @@ def start_game():
     correct_answers = 0
     question_number = 1
 
-    for key in questions:
+    for x in questions:
         print("********************")
-        print(key)
+        print(x)
         for i in answers[question_number - 1]:
             print(i)
         guess = input("Please enter your answer! Is it (A, B, C or D?): ")
         guess = guess.upper()
         guesses.append(guess)
+        if guess 
 
-        correct_answers += check_answer(questions.get(key), guess)
+        correct_answers += check_answer(questions.get(x), guess)
         question_number += 1
 
     score_display(correct_answers, guesses)
@@ -31,7 +32,7 @@ def check_answer(answer, guess):
 
 def score_display(correct_answers, guesses):
     print("***********************************")
-    print("SCOREBOARD")
+    print("FINAL SCORES")
     print("***********************************")
 
     print("Answers: ", end="")
@@ -50,14 +51,13 @@ def score_display(correct_answers, guesses):
 
 def start_over():
 
-    response = input("Would you like to try again? (yes / no: ")
+    response = input("Would you like to try again? (yes / no): ")
     response = response.upper()
 
     if response == "YES":
         return True
-    else: 
+    else:
         return False
-   
 
 
 questions = {
@@ -91,3 +91,8 @@ answers = [
 ]
 
 start_game()
+
+while start_over():
+    start_game()
+
+print("Okay, see you soon! :)")

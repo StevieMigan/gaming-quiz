@@ -1,14 +1,33 @@
 def start_game():
-    pass
+
+    guesses = []
+    correct_answers = 0
+    question_number = 1
+
+    for key in questions:
+        print("********************")
+        print(key)
+        for i in answers[question_number - 1]:
+            print(i)
+        guess = input("Please enter your answer! Is it (A, B, C or D?): ")
+        guess = guess.upper()
+        guesses.append(guess)
+
+        check_answer(questions.get(key), guess)       
+        question_number += 1
+
 
 def check_answer():
     pass
 
+
 def score_display():
     pass
 
+
 def start_over():
     pass
+
 
 questions = {
     "What is the best selling console of all time?: ": "A",
@@ -24,14 +43,20 @@ questions = {
 }
 
 answers = [
-    ["A. Playstation 2", "B. Nintendo Switch", "C. Nintendo Wii", "D. Super Nintendo (SNES)"]
-    ["A. Electronic Arts (EA)", "B. FROM Software", "C. Square Enix", "D. Blizzard"]
-    ["A. Liquid Snake", "B. Raiden", "C. Big Boss", "D. Solidus"]
-    ["A. 999,999,999", "B. 255", "C. 65,535", "D. 3,335,360"]
-    ["A. Tanuki", "B. Raccoon", "C. Fox", "D. Badger"]
-    ["A. Red", "B. Green", "C. White", "D. Blue"]
-    ["A. The Elder Scrolls: Skyrim", "B. Dead Space 2", "C. Dark Souls", "D. Cars 2"]
-    ["A. Frontier", "B. Introversion Software", "C. 2 point studios", "D. Paradox interactive"]
-    ["A. Final Fantasy XIV", "B. Guild Wars", "C. Elder scrolls online", "D. World of Warcraft"]
-    ["A. Candy Crush", "B. Angry Birds", "C. Pokemon GO", "D. Temple Run"]
+    ["A. Playstation 2", "B. Nintendo Switch",
+        "C. Nintendo Wii", "D. Super Nintendo (SNES)"],
+    ["A. Electronic Arts (EA)", "B. FROM Software",
+     "C. Square Enix", "D. Blizzard"],
+    ["A. Liquid Snake", "B. Raiden", "C. Big Boss", "D. Solidus"],
+    ["A. 999,999,999", "B. 255", "C. 65,535", "D. 3,335,360"],
+    ["A. Tanuki", "B. Raccoon", "C. Fox", "D. Badger"],
+    ["A. Red", "B. Green", "C. White", "D. Blue"],
+    ["A. The Elder Scrolls: Skyrim", "B. Dead Space 2", "C. Dark Souls", "D. Cars 2"],
+    ["A. Frontier", "B. Introversion Software",
+        "C. 2 point studios", "D. Paradox interactive"],
+    ["A. Final Fantasy XIV", "B. Guild Wars",
+        "C. Elder scrolls online", "D. World of Warcraft"],
+    ["A. Candy Crush", "B. Angry Birds", "C. Pokemon GO", "D. Temple Run"],
 ]
+
+start_game()

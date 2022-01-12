@@ -49,7 +49,15 @@ def score_display(correct_answers, guesses):
 
 
 def start_over():
-    pass
+
+    response = input("Would you like to try again? (yes / no: ")
+    response = response.upper()
+
+    if response == "YES":
+        return True
+    else: 
+        return False
+   
 
 
 questions = {

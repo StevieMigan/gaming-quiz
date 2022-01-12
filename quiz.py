@@ -13,12 +13,18 @@ def start_game():
         guess = guess.upper()
         guesses.append(guess)
 
-        check_answer(questions.get(key), guess)       
+        correct_answers += check_answer(questions.get(key), guess)       
         question_number += 1
 
 
-def check_answer():
-    pass
+def check_answer(answer, guess):
+    
+    if answer == guess:
+        print("Well done! That's the correct answer :)")
+        return 1
+    else:
+        print("Sorry, that's incorrect!")
+        return 0
 
 
 def score_display():

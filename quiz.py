@@ -16,6 +16,10 @@ def start_game():
         correct_answers += check_answer(questions.get(key), guess)       
         question_number += 1
 
+    score_display(correct_answers, guesses)
+
+
+
 
 def check_answer(answer, guess):
     
@@ -27,8 +31,13 @@ def check_answer(answer, guess):
         return 0
 
 
-def score_display():
-    pass
+def score_display(correct_answers, guesses):
+    print("***********************************")
+    print("SCOREBOARD")
+    print("***********************************")
+    print("Answers: ", end="")
+    for i in questions:
+        print(questions.get(i), end="")
 
 
 def start_over():

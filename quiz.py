@@ -13,16 +13,14 @@ def start_game():
         guess = guess.upper()
         guesses.append(guess)
 
-        correct_answers += check_answer(questions.get(key), guess)       
+        correct_answers += check_answer(questions.get(key), guess)
         question_number += 1
 
     score_display(correct_answers, guesses)
 
 
-
-
 def check_answer(answer, guess):
-    
+
     if answer == guess:
         print("Well done! That's the correct answer :)")
         return 1
@@ -35,9 +33,19 @@ def score_display(correct_answers, guesses):
     print("***********************************")
     print("SCOREBOARD")
     print("***********************************")
+
     print("Answers: ", end="")
     for i in questions:
-        print(questions.get(i), end="")
+        print(questions.get(i), end=" ")
+    print()
+
+    print("Guesses: ", end="")
+    for i in guesses:
+        print(i, end=" ")
+    print()
+
+    score = int((correct_answers / len(questions)) * 100)
+    print("Thanks for playing! Your score today is: " + str(score) + "%")
 
 
 def start_over():

@@ -8,13 +8,22 @@ def start_game():
         print("********************")
         print(x)
         print()
-        for i in answers[question_number - 1]:
-            print(i)
-        guess = input("Please enter your answer! Is it (A, B, C or D?): ")
-        guess = guess.upper()
-        guesses.append(guess)
-        correct_answers += check_answer(questions.get(x), guess)
-        question_number += 1
+        while True:
+            for i in answers[question_number - 1]:
+                print(i)
+                print()
+            guess = input("Please enter your answer! Is it (A, B, C or D?): ")
+            guess = guess.upper()
+            acceptable = ["A", "B", "C", "D"]
+            if guess in acceptable:
+                guesses.append(guess)
+                correct_answers += check_answer(questions.get(x), guess)
+                question_number += 1
+                break
+            else:
+                print("Sorry, I don't recognize that! Try again.")
+                print()
+                continue
 
     score_display(correct_answers, guesses)
 
